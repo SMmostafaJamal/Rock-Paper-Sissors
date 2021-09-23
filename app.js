@@ -1,0 +1,1 @@
+// create function computerPlay that randomly returns r-p-s
