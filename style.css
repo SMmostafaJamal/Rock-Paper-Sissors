@@ -1,6 +1,9 @@
 body {
     text-align: center;
+    background-color: black;
 }
-#btns {
-    
+
+#results, h1 {
+    color: white;
+
 }
