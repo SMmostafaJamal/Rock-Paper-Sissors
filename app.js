@@ -1,6 +1,7 @@
 const computerHand = document.querySelector('#computer-sign');
 const playerHand = document.querySelector('#player-sign');
 const message = document.querySelector('#message');
+const resetBtn = document.getElementById('reset');
 
 function playerPicChange(sign){
     playerHand.src = `./images/${sign}.png`;
@@ -28,26 +29,40 @@ let computerScore = 0;
 const player = document.querySelector('#player-score');
 const computer = document.querySelector('#computer-score');
 
+// disabling playing icons
+const disabling = () => {
+    document.getElementById('rock-btn').setAttribute('disabled','true')
+    document.getElementById('paper-btn').setAttribute('disabled','true')
+    document.getElementById('scissor-btn').setAttribute('disabled','true')
+}
+
+
 const gameOver = () => {
     if(playerScore === 5){
-        reset();
+        disabling()
         message.setAttribute('style','color: green')
         message.innerText = ' Winner !!!'
         return
     }else if(computerScore === 5){
-        reset()
+        disabling()
         message.setAttribute('style','color: red')
         message.innerText = 'You Lose!!!'
+        return
+    }else if(playerScore === 5 && computerScore===5){
+        message.setAttribute('style','color: blue')
+        message.innerText = 'Tie!!!'
         return
     }
 }
 // To reset after game is over
-const reset = () =>{
-    computerScore = 0;
-    playerScore = 0;
-    player.textContent = playerScore;
+resetBtn.addEventListener('click', reset = (e) =>{
+    computerScore = 0,
+    playerScore = 0,
+    player.textContent = playerScore,
     computer.textContent = computerScore;
-}
+    return window.location.reload();
+})
+
 
 // computerPlay that randomly returns r-p-s & which corresponds to 0-2
 function computerPlay(){
