@@ -1,10 +1,28 @@
+const computerHand = document.querySelector('#computer-sign');
+const playerHand = document.querySelector('#player-sign');
+
+
+
+
+function playerChange(sign){
+    playerHand.src = `./images/${sign}.png`;
+}
+function computerChange(sign){
+    computerHand.src = `./images/${sign}.png`
+}
+
+
 const rock = document.querySelector('#rock-btn').addEventListener('click', function(e){
-    return playRounds(e.currentTarget.value, computerPlay());
+    playerChange(e.currentTarget.value);
+    return playRounds(e.currentTarget.value, computerPlay()); 
+    // currentTarget to work the button where ever i click inside the button
 });
 const paper = document.querySelector('#paper-btn').addEventListener('click', function(e){
+    playerChange(e.currentTarget.value);
     return playRounds(e.currentTarget.value, computerPlay());
 });
 const scissor = document.querySelector('#scissor-btn').addEventListener('click', function(e){
+    playerChange(e.currentTarget.value);
     return playRounds(e.currentTarget.value, computerPlay());
 });
 
@@ -17,7 +35,8 @@ const computer = document.querySelector('#computer-score');
 function computerPlay(){
     randomNum = Math.floor(Math.random()*3); 
     // condition for RPS and returns the value
-    return (randomNum === 0) ? 'rock'
+    computerChange(randomNum)
+    return (randomNum === 0) ? 'rock' 
          : (randomNum === 1) ? 'paper'
          : 'scissor';
 };
@@ -27,6 +46,7 @@ function playRounds(playerSelection, computerSelection){
     console.log(playerSelection, computerSelection)
         if((playerScore !== 5) || (computerScore !== 5) && !(confirm("You Won"))){
             if(playerSelection === 'rock' && computerSelection === 'paper') {
+
                 return computer.textContent = ++computerScore; 
             }else if(playerSelection === 'paper' && computerSelection === 'scissor'){
                 return computer.textContent = ++computerScore; 
