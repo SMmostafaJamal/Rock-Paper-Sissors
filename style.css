@@ -28,9 +28,8 @@ i:hover {
 #board {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     margin: auto;
-    width: 90%;
+    width: 60%;
     height: 500px;
     border: 1px solid blanchedalmond;
     color: white;
@@ -39,21 +38,27 @@ i:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 25%;
+    width: 150px;
     border-right: 1px solid;
 }
 #computer-sign, #player-sign {
     height: 80%;
-    width: 70%;
-    /* border: 1px solid blanchedalmond; */
-
+    width: 300px;
+}
+#message,p {
+    width: 60%;
+    height: 50px;
+    margin: 30px auto;
+    font-size: 20px;
+}
+h2{
+    margin: 0;
 }
 #results {
     display: flex;
-    /* margin-left: 20%; */
     margin: auto;
-    height: 100px;
-    width: 90%;
+    height: 60px;
+    width: 60%;
     border: 1px solid blanchedalmond;
 
 }
