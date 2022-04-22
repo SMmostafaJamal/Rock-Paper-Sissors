@@ -1,2 +1,2 @@
 # Rock-Paper-Sissors live link:
-https://smmostafajamal.github.io/Rock-Paper-Sissors/
+https://sm-mostafajamal.github.io/Rock-Paper-Sissors/
